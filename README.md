@@ -7,8 +7,8 @@ in Turbo Pascal 5.5 for MS-DOS Computers with 640K of RAM and VGA graphics.
 
 Free Pascal port created by I. Kakoulidis.
 
-<img src="https://github.com/JulStrat/kcchess/blob/main/kcchess.png">
-<img src="https://github.com/JulStrat/kcchess/blob/main/board.png">
+<img src="https://github.com/JulStrat/kcchess/blob/master/kcchess.png">
+<img src="https://github.com/JulStrat/kcchess/blob/master/board.png">
 
 ## Requirements
 
