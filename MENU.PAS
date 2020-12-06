@@ -62,7 +62,7 @@
       if IOerror then begin
           ClrScr;
           write ('IO error trying to access "CHESS.HLP".  Press key...');
-          key := Chr(ReadKey);
+          ReadKey;
       end else
           close (HelpFile);
     end;
@@ -298,7 +298,7 @@
       {*** report I/O error if any ***}
       if IOerror then begin
           OutTextXY (35, 200, 'I/O Error!!  Press a key.');
-          key := Chr(ReadKey);
+          ReadKey;
       end;
       {*** redisplay the game board on the main screen after filename ***}
       DisplayBoard;
@@ -331,7 +331,7 @@
       if IOerror then begin
           {*** report I/O error ***}
           OutTextXY (35, 200, 'I/O Error!!  Press a key.');
-          key := Chr(ReadKey);
+          ReadKey;
       end else begin
           {*** make the loaded game permanent only if there were no I/O errors ***}
           Game := LoadGame;
@@ -370,7 +370,7 @@
       {*** indicate if any I/O errors occured ***}
       if IOError then begin
           OutTextXY (35, 200, 'I/O Error!!  Press a key.');
-          key := Chr(ReadKey);
+          ReadKey;
       end;
     end; {SaveGame}
 

@@ -66,7 +66,6 @@
   procedure DisplayTitleScreen;
     var key : char;
 
-    (* procedure CenterTitle (row : integer; str : string80); *)
     procedure CenterTitle (row : integer; str : PChar);
       begin
         OutTextXY (320 - TextWidth(str) div 2, row, str);
@@ -97,8 +96,7 @@
       PutImage (320+WIDE*1, 135, @ImageStore^[KNIGHT, C_BLACK, S_LIGHT], 0);
       SetColor (Yellow);
       CenterTitle (450, 'Press any key to begin');
-      (* key := ReadKey; *)
-      ReadKey();
+      ReadKey;
     end;
 
 {****************************************************************************}
@@ -176,7 +174,7 @@
         bstr : string80;
     begin
       SetTextStyle (TriplexFont, HorizDir, 1);
-      SetColor (Black (* Yellow *));
+      SetColor (Black);
       with Player[color] do begin
           CenterText (row, Name);
           CenterText (row + MSG_CHI, TimeString (ElapsedTime));
@@ -205,7 +203,7 @@
   procedure DisplayInstructions (InstrSet : InstructionType);
     const CHI = 11;  {*** character height ***}
 
-    procedure OutLine (LineNum : integer; OutText : string80);
+    procedure OutLine (LineNum : integer; OutText : PChar);
       begin
         OutTextXY (0, INSTR_LINE + CHI * LineNum, OutText);
       end;

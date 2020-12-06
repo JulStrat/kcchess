@@ -450,7 +450,7 @@
                 writeln;
                 writeln;
                 write ('Press any key to continue...');
-                key := Chr(ReadKey);
+                ReadKey;
                 SetGraphMode (GraphMode);
                 DisplayGameScreen;
                 if not PickingUp then begin

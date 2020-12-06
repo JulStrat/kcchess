@@ -11,17 +11,16 @@
 {*  computer with 640K of RAM and a VGA graphics card.                      *}
 {****************************************************************************}
 
-//{$M 45000, 80000, 80000}  {*** memory parameters - stack size, heap size ***}
-
 program ChessMain;
 {$IF Defined(FPC)}
 {$MODE Delphi}
 {$ENDIF}
+{$APPTYPE Console}
 
-  uses (* graph, crt, dos *) ubgi, SysUtils;  {*** use Turbo Pascal subroutine packages ***}
+  uses  SysUtils, ubgi;
 
         {*** miscellaneous program constants ***}
-  const HIGH = 52;  WIDE = 52;  SINGLE_IMAGE_SIZE = 10824 (* 1500 *);
+  const HIGH = 52;  WIDE = 52;  SINGLE_IMAGE_SIZE = 10824;
         BOARD_SIZE = 8;  ROW_NAMES = '12345678';  COL_NAMES = 'ABCDEFGH';
         BOARD_X1 = 19;  BOARD_Y1 = 4;  BOARD_X2 = 434;  BOARD_Y2 = 419;
         INSTR_LINE = 450;  MESSAGE_X = 460;
@@ -137,7 +136,7 @@ program ChessMain;
       ImageStore : ImageTypePt;
       GraphDriver, GraphMode : integer;   {*** for Turbo Pascal graphics ***}
 
-(*************************)
+{****************************************************************************}
 procedure Sound(Hz: word);
 begin
 end;
@@ -160,7 +159,7 @@ begin
   sec100 := sec100 div 10;
 end;
 
-(*************************)
+{****************************************************************************}
 
 {*** include files ***}
 

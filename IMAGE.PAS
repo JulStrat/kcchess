@@ -13,8 +13,8 @@ program GetImages;
 {$MODE Delphi}
 {$ENDIF}
 
-  uses (* graph, crt *) ubgi;
-  const HIGH = 52; WIDE = 52; OFFY = 100; OFFX = 10; SiImageSize = 10824 (* 1500 *);
+  uses ubgi;
+  const HIGH = 52; WIDE = 52; OFFY = 100; OFFX = 10; SiImageSize = 10824;
   type PieceType = (P_BLANK, P_PAWN, P_BISHOP, P_KNIGHT, P_ROOK, P_QUEEN,
                     P_KING);
        PieceColorType = (C_WHITE, C_BLACK);
@@ -40,7 +40,7 @@ program GetImages;
     readln (InFile, InLn);
     CurPiece := P_BLANK;
     
-    ImSize := ImageSize(OFFX, OFFY, OFFX+WIDE-1, OFFY+HIGH-1);
+    ImSize := ImageSize (OFFX, OFFY, OFFX+WIDE-1, OFFY+HIGH-1);
     for c := 0 to 6 do begin
         readln (InFile, InLn);
         readln (InFile, InLn);
@@ -92,7 +92,7 @@ program GetImages;
     close (OutFile);
     SetTextStyle (DefaultFont, HorizDir, 2);
     OutTextXY (0,0,'Press any key to continue...');
-    schar := Char(ReadKey);
+    ReadKey;
     RestoreCrtMode;
     WriteLn('ImSize: ', ImSize);
   end.
