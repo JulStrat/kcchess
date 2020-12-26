@@ -12,6 +12,11 @@ Free Pascal port created by I. Kakoulidis.
 <img src="https://github.com/JulStrat/kcchess/blob/master/kcchess.png">
 <img src="https://github.com/JulStrat/kcchess/blob/master/board.png">
 
+## Build
+
+FPC - `fpc -B CHESS.PAS`.
+Delphi - `dcc64 -B -NSSystem CHESS.PAS`.
+
 ## Requirements
 
 [SDL_bgi](http://libxbgi.sourceforge.net) v2.4.1, [SDL2](https://www.libsdl.org/) Windows dynamic libraries.

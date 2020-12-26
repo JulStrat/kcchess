@@ -66,7 +66,7 @@
   procedure DisplayTitleScreen;
     var key : char;
 
-    procedure CenterTitle (row : integer; str : PChar);
+    procedure CenterTitle (row : integer; str : PAnsiChar);
       begin
         OutTextXY (320 - TextWidth(str) div 2, row, str);
       end;
@@ -159,8 +159,11 @@
 {*  of the conversation area.                                               *}
 {****************************************************************************}
   procedure CenterText (row : integer; str : string80);
+    var
+      s: AnsiString;
     begin
-      OutTextXY (MSG_MIDX - TextWidth(PChar(String(str))) div 2, row, PChar(String(str)));
+      s := AnsiString(str);
+      OutTextXY (MSG_MIDX - TextWidth(PAnsiChar(s)) div 2, row, PAnsiChar(s));
     end;
 
 {****************************************************************************}
